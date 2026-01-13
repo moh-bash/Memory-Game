@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Mohamad Bashir">
+    <meta name="description" content="تجريب...جاري التطوير">
+    <title>Memory Game</title>
+    <!-- style -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-900">
+
+
+    <div class="controller">
+        <h1 >Memory Game</h1>
+        <input type="text" id="player-name" placeholder="Enter your name" class="">
+        <span id="new-game">New Game</span>
+        <a href="https://t.me/Mhd_Bash">    
+            <h2 ><i class="fa-brands fa-telegram me-2"></i><b>Dev.</b> Mohamad Bashir</h2>
+        </a>
+    </div>
+    <div class="container mx-auto max-w-2xl bg-blue-600 flex justify-between p-4 rounded-lg mt-3">
+        <div class="tries font-semibold text-white">
+            Hello <span id="name"></span>
+        </div>
+        <div class="tries font-semibold text-white">
+            Wrong tries : <span id="tries" class="text-red-500 mx-1">0</span>
+        </div>
+    </div>
+
+    <div id="containerblock" class="container bg-gray-800 mx-auto max-w-3xl  p-4 pb-0 rounded-lg my-2 flex flex-wrap">
+        <!-- massage -->
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="massage">
+            <div class="fas front">
+                <i class="fa-solid fa-envelope text-6xl" style="color: #B197FC;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="massage">
+            <div class="fas front">
+                <i class="fa-solid fa-envelope text-6xl" style="color: #B197FC;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <!-- Apple -->
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="apple">
+            <div class="fas front">
+                <i class="fa-solid fa-apple-whole text-6xl" style="color: #63E6BE;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="apple">
+            <div class="fas front">
+                <i class="fa-solid fa-apple-whole text-6xl" style="color: #63E6BE;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <!-- car -->
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="car">
+            <div class="fas front">
+                <i class="fa-solid fa-car text-6xl" style="color: #FDE68A;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="car">
+            <div class="fas front">
+                <i class="fa-solid fa-car text-6xl" style="color: #FDE68A;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <!-- book -->
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="book">
+            <div class="fas front">
+                <i class="fa-solid fa-book text-6xl" style="color: #FCA5A5;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="book">
+            <div class="fas front">
+                <i class="fa-solid fa-book text-6xl" style="color: #FCA5A5;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <!-- game -->
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="game">
+            <div class="fas front">
+                <i class="fa-solid fa-gamepad text-6xl" style="color: #FBBF24;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="game">
+            <div class="fas front">
+                <i class="fa-solid fa-gamepad text-6xl" style="color: #FBBF24;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <!-- hous -->
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="house">
+            <div class="fas front">
+                <i class="fa-solid fa-house text-6xl" style="color: #34D399;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="house">
+            <div class="fas front">
+                <i class="fa-solid fa-house text-6xl" style="color: #34D399;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <!-- camera -->
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="camera">
+            <div class="fas front">
+                <i class="fa-solid fa-camera text-6xl" style="color: #F87171;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="camera">
+            <div class="fas front">
+                <i class="fa-solid fa-camera text-6xl" style="color: #F87171;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <!-- mug -->
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="mug">
+            <div class="fas front">
+                <i class="fa-solid fa-mug-saucer text-6xl" style="color: #38BDF8;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="mug">
+            <div class="fas front">
+                <i class="fa-solid fa-mug-saucer text-6xl" style="color: #38BDF8;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <!-- lock -->
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="lock">
+            <div class="fas front">
+                <i class="fa-solid fa-lock text-6xl" style="color: #FBBF24;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="lock">
+            <div class="fas front">
+                <i class="fa-solid fa-lock text-6xl" style="color: #FBBF24;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <!-- plane -->
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="plane">
+            <div class="fas front">
+                <i class="fa-solid fa-plane text-6xl" style="color: #FBBF24;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="plane">
+            <div class="fas front">
+                <i class="fa-solid fa-plane text-6xl" style="color: #FBBF24;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <!-- clock -->
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="clock">
+            <div class="fas front">
+                <i class="fa-solid fa-clock text-6xl" style="color: #248ffb;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="clock">
+            <div class="fas front">
+                <i class="fa-solid fa-clock text-6xl" style="color: #248ffb;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <!-- crown -->
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="crown">
+            <div class="fas front">
+                <i class="fa-solid fa-crown text-6xl" style="color: #e86868;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="crown">
+            <div class="fas front">
+                <i class="fa-solid fa-crown text-6xl" style="color: #e86868;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <!-- microphone -->
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="microphone">
+            <div class="fas front">
+                <i class="fa-solid fa-microphone text-6xl" style="color: #d9d6cf;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="microphone">
+            <div class="fas front">
+                <i class="fa-solid fa-microphone text-6xl" style="color: #d9d6cf;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <!-- box -->
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="box">
+            <div class="fas front">
+                <i class="fa-solid fa-box text-6xl" style="color: #38BDF8;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="box">
+            <div class="fas front">
+                <i class="fa-solid fa-box text-6xl" style="color: #38BDF8;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <!-- cat -->
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="cat">
+            <div class="fas front">
+                <i class="fa-solid fa-cat text-6xl" style="color: #FBBF24;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+        <div class="game-block bg-gray-900 rounded-lg" data-technology="cat">
+            <div class="fas front">
+                <i class="fa-solid fa-cat text-6xl" style="color: #FBBF24;"></i>
+            </div>
+            <div class="fas back">
+                <i class="fa-solid fa-exclamation text-white text-6xl"></i>
+            </div>
+        </div>
+    </div>
+    <audio id="success" src="./audio/Achievement Sound Effect(M4A_128K).m4a" preload="auto"></audio>
+    <audio id="error" src="./audio/Error - Sound Effect _ Non copyright sound effects _ FeeSou(M4A_128K).m4a"></audio>
+    <audio id="levelup" src="./audio/Pokemon Level Up - Sound Effect SFX(M4A_128K).m4a"></audio>
+    <script src="./script.js"></script>
+
+
+
+
+
+    
+</body>
+</html>
