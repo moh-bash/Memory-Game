@@ -17,7 +17,7 @@ goplay.onclick = function() {
         levelupSound.play();
         let timeCounter = document.getElementById("time");
         let gameOverPopp = document.getElementById("game-over");
-        let seconds = 320;
+        let seconds = 120;
         let timer = setInterval(() => {
             seconds--;
             timeCounter.innerHTML = seconds;
