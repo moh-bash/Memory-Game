@@ -15,8 +15,27 @@ goplay.onclick = function() {
         document.querySelector(".controller").style.display = "none";
         let levelupSound = document.getElementById("levelup");
         levelupSound.play();
+        let timeCounter = document.getElementById("time");
+        let gameOverPopp = document.getElementById("game-over");
+        let seconds = 120;
+        let timer = setInterval(() => {
+            seconds--;
+            timeCounter.innerHTML = seconds;
+            if (seconds === 0) {
+                clearInterval(timer);
+                gameOverPopp.classList.remove("hidden");
+                let failSound = document.getElementById("lost");
+                failSound.play();
+            }
+        }, 1000);
     }
 }
+
+// Game retry
+let retry = document.getElementById("retry-btn");
+retry.onclick = function() {
+    window.location.reload();
+};
 
 
 let time = 1000;
@@ -48,7 +67,7 @@ function flipblock(selectedblock) {
 
 // Match function
 function checkmatch(block1, block2) {
-    let triesElement = document.getElementById("tries");
+    let triesElement = document.querySelectorAll(".wrong");
     if (block1.dataset.technology === block2.dataset.technology) {
         block1.classList.remove("flepped");
         block2.classList.remove("flepped");
@@ -59,7 +78,9 @@ function checkmatch(block1, block2) {
         let successSound = document.getElementById("success");
         successSound.play();
     }else{
-        triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
+        triesElement.forEach(span => {
+            span.innerHTML = parseInt(span.innerHTML) + 1;
+        });
         setTimeout(() => {
             block1.classList.remove("flepped");
             block2.classList.remove("flepped");

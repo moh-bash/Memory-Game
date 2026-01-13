@@ -16,7 +16,7 @@
 </head>
 <body class="bg-gray-900">
 
-
+    <!-- start -->
     <div class="controller">
         <h1 class="text-4xl md:text-7xl mx-auto">Memory Game</h1>
         <a href="https://t.me/Mhd_Bash" class="mx-auto mt-2">    
@@ -25,15 +25,36 @@
         <input type="text" id="player-name" placeholder="Enter your name" class="mx-auto mt-4 p-2 rounded-lg text-center text-xl md:text-2xl">
         <span id="new-game" class="text-xl md:text-3xl max-w-70 mx-auto mt-4">New Game</span>
     </div>
+    <!-- correct -->
+    <div id="congratulations" class="congratulations bg-gray-900 flex flex-col absolute w-full h-full justify-center items-center top-0 left-0 z-10 hidden">
+        <p class="text-white text-4xl"> Congratulations ! 🎉</p>
+        <P class="text-white text-4xl mt-4">You completed the game ✅</P>
+        <button id="play-again-btn" class="bg-blue-700 hover:bg-blue-900 cursor-pointer mt-4 text-3xl rounded-lg px-9 py-2">Play Again</button>
+    </div>
+    <!-- Wrong -->
+    <div id="game-over" class="game-over bg-gray-900 flex flex-col absolute w-full h-full justify-center items-center top-0 left-0 z-10 hidden">
+        <p class="text-white text-4xl"> Wrong tries : <span class="wrong text-red-500 mx-1">0</span></p>
+        <P class="text-white text-4xl mt-4">game over 😓</P>
+        <button id="retry-btn" class="bg-blue-700 hover:bg-blue-900 cursor-pointer mt-4 text-3xl rounded-lg px-9 py-2">Retry</button>
+    </div>
+
+    <!-- header -->
     <div class="container mx-auto max-w-2xl bg-blue-600 flex justify-between p-3 py-1 rounded-lg mt-2">
         <div class="tries font-semibold text-white">
             Hello <span id="name"></span>
         </div>
-        <div class="tries font-semibold text-white">
-            Wrong tries : <span id="tries" class="text-red-500 mx-1">0</span>
+        <div class="font-semibold text-white">
+            Wrong : <span  class="wrong text-red-500 mx-1">0</span>
+        </div>
+        <div class="font-semibold text-white">
+            correct : <span  class="correct text-red-500 mx-1">0</span>
+        </div>
+        <div class="time font-semibold text-white">
+            Time : <span id="time" class="text-green-500 mx-1">0</span> sec
         </div>
     </div>
 
+    <!-- container block -->
     <div id="containerblock" class="container bg-gray-800 mx-auto max-w-3xl  p-4 pb-0 rounded-lg my-2 flex flex-wrap">
         <!-- massage -->
         <div class="game-block bg-gray-900 rounded-lg" data-technology="massage">
@@ -294,6 +315,7 @@
     <audio id="success" src="./audio/Achievement Sound Effect(M4A_128K).m4a" preload="auto"></audio>
     <audio id="error" src="./audio/Error - Sound Effect _ Non copyright sound effects _ FeeSou(M4A_128K).m4a"></audio>
     <audio id="levelup" src="./audio/Pokemon Level Up - Sound Effect SFX(M4A_128K).m4a"></audio>
+    <audio id="lost" src="./audio/Sad Trombone Wah Wah Wah Fail Sound Effect(M4A_128K).m4a"></audio>
     <script src="./script.js"></script>
 
 
