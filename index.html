@@ -22,7 +22,7 @@
         <a href="https://t.me/Mhd_Bash" class="mx-auto mt-2">    
             <h2 class="text-lg md:text-2xl"><i class="fa-brands fa-telegram me-2"></i><b>Dev.</b> Mohamad Bashir</h2>
         </a>
-        <input type="text" id="player-name" placeholder="Enter your name" class="mx-auto mt-4 p-2 rounded-lg text-center text-xl md:text-2xl">
+        <input type="text" id="player-name" maxlength="5" placeholder="Enter your name" class="mx-auto mt-4 p-2 rounded-lg text-center text-xl md:text-2xl">
         <span id="new-game" class="text-xl md:text-3xl max-w-70 mx-auto mt-4">New Game</span>
     </div>
     <!-- correct -->
@@ -31,6 +31,7 @@
         <P class="text-white text-4xl mt-4">You completed the game ✅</P>
         <button id="play-again-btn" class="bg-blue-700 hover:bg-blue-900 cursor-pointer mt-4 text-3xl rounded-lg px-9 py-2">Play Again</button>
     </div>
+
     <!-- Wrong -->
     <div id="game-over" class="game-over bg-gray-900 flex flex-col absolute w-full h-full justify-center items-center top-0 left-0 z-10 hidden">
         <p class="text-white text-4xl"> Wrong tries : <span class="wrong text-red-500 mx-1">0</span></p>
@@ -40,17 +41,17 @@
 
     <!-- header -->
     <div class="container mx-auto max-w-2xl bg-blue-600 flex justify-between p-3 py-1 rounded-lg mt-2">
-        <div class="tries font-semibold text-white">
+        <div class="tries font-semibold text-white p-1">
             Hello <span id="name"></span>
         </div>
-        <div class="font-semibold text-white">
-            Wrong : <span  class="wrong text-red-500 mx-1">0</span>
+        <div class="font-semibold text-white bg-red-700 p-1 rounded-lg">
+            Wrong : <span  class="wrong text-white mx-1">0</span>
         </div>
-        <div class="font-semibold text-white">
-            correct : <span  class="correct text-red-500 mx-1">0</span>
+        <div class="font-semibold text-white bg-green-500 p-1 rounded-lg">
+            correct : <span  class="correct text-white mx-1">0</span>
         </div>
-        <div class="time font-semibold text-white">
-            Time : <span id="time" class="text-green-500 mx-1">0</span> sec
+        <div class="time font-semibold text-white  p-1">
+            Time : <span id="time" class="text-lime-900 mx-1">0</span> s
         </div>
     </div>
 

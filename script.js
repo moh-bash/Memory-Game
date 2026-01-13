@@ -17,7 +17,7 @@ goplay.onclick = function() {
         levelupSound.play();
         let timeCounter = document.getElementById("time");
         let gameOverPopp = document.getElementById("game-over");
-        let seconds = 120;
+        let seconds = 320;
         let timer = setInterval(() => {
             seconds--;
             timeCounter.innerHTML = seconds;
@@ -36,6 +36,10 @@ let retry = document.getElementById("retry-btn");
 retry.onclick = function() {
     window.location.reload();
 };
+let successRetry = document.getElementById("play-again-btn");
+successRetry.onclick = function() {
+    window.location.reload();
+};
 
 
 let time = 1000;
@@ -46,7 +50,6 @@ shuffle(orderRange)
 
 blocks.forEach((block, index) => {
     block.style.order = orderRange[index];
-
     block.addEventListener("click",function(){
         flipblock(block);
     });
@@ -55,20 +58,30 @@ blocks.forEach((block, index) => {
 // Flip function
 function flipblock(selectedblock) {
     selectedblock.classList.add("flepped");
-
     let allfleppedblocks = blocks.filter(fleppedblock => fleppedblock.classList.contains("flepped"));
-
     if (allfleppedblocks.length === 2) {
         stopclicking();
         checkmatch(allfleppedblocks[0], allfleppedblocks[1]);
     }
-    
+
 };
+
+
+
 
 // Match function
 function checkmatch(block1, block2) {
     let triesElement = document.querySelectorAll(".wrong");
+    let triesCorrect = document.querySelectorAll(".correct");
+    let winsuccess = document.getElementById("congratulations");
     if (block1.dataset.technology === block2.dataset.technology) {
+        triesCorrect.forEach(span => {
+            span.innerHTML = parseInt(span.innerHTML) + 1;
+            if(span.innerHTML == 15){
+                winsuccess.classList.remove("hidden");
+            };
+        });
+
         block1.classList.remove("flepped");
         block2.classList.remove("flepped");
 
