@@ -79,6 +79,8 @@ function checkmatch(block1, block2) {
             span.innerHTML = parseInt(span.innerHTML) + 1;
             if(span.innerHTML == 15){
                 winsuccess.classList.remove("hidden");
+                let end = document.getElementById("theEnd");
+                end.play();
             };
         });
 
